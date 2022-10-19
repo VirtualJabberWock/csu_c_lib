@@ -1,0 +1,5 @@
+﻿  main.c
+C:\Users\aqua\source\repos\ExperimentC\ExperimentC\main.c(7,14): warning C4047: =: "int *" отличается по уровням косвенного обращения от "int"
+C:\Users\aqua\source\repos\ExperimentC\ExperimentC\main.c(8,14): warning C4047: =: "int *" отличается по уровням косвенного обращения от "int"
+C:\Users\aqua\source\repos\ExperimentC\ExperimentC\main.c(12): error C4700: использована неинициализированная локальная переменная "a"
+C:\Users\aqua\source\repos\ExperimentC\ExperimentC\main.c(13): error C4700: использована неинициализированная локальная переменная "b"
