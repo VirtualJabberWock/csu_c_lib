@@ -3,10 +3,6 @@
 #include "Storage.h"
 #include "StringUtils.h"
 
-int __handle__() {
-	
-}
-
 // TODO EVERY PUT FOR EVERY FUNC
 
 Storage Storage_New()

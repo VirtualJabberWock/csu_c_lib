@@ -1,5 +1,9 @@
-﻿  main.c
-C:\Users\aqua\source\repos\ExperimentC\ExperimentC\main.c(7,14): warning C4047: =: "int *" отличается по уровням косвенного обращения от "int"
-C:\Users\aqua\source\repos\ExperimentC\ExperimentC\main.c(8,14): warning C4047: =: "int *" отличается по уровням косвенного обращения от "int"
-C:\Users\aqua\source\repos\ExperimentC\ExperimentC\main.c(12): error C4700: использована неинициализированная локальная переменная "a"
-C:\Users\aqua\source\repos\ExperimentC\ExperimentC\main.c(13): error C4700: использована неинициализированная локальная переменная "b"
+﻿  NativeCrypto.c
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\cryptoLib\NativeCrypto.c(3,62): warning C4142: "l_rot64": неопасное переопределение типа
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\cryptoLib\NativeCrypto.h(3): message : см. объявление "l_rot64"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\cryptoLib\NativeCrypto.c(7,61): warning C4142: "r_rot64": неопасное переопределение типа
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\cryptoLib\NativeCrypto.h(4): message : см. объявление "r_rot64"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\cryptoLib\NativeCrypto.c(16,24): warning C4244: =: преобразование "unsigned __int64" в "unsigned char", возможна потеря данных
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\cryptoLib\NativeCrypto.c(12,1): warning C4244: инициализация: преобразование "unsigned __int64" в "unsigned char", возможна потеря данных
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\cryptoLib\NativeCrypto.c(13,1): warning C4244: инициализация: преобразование "unsigned __int64" в "unsigned char", возможна потеря данных
+  ExperimentC.vcxproj -> C:\Users\aqua\source\repos\ExperimentC\Debug\ExperimentC.exe

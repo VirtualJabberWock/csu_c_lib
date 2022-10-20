@@ -146,6 +146,7 @@
     <ClCompile Include="aquaLib\FileUtils.c" />
     <ClCompile Include="aquaLib\Storage.c" />
     <ClCompile Include="aquaLib\StringUtils.c" />
+    <ClCompile Include="cryptoLib\NativeCrypto.c" />
     <ClCompile Include="main.c" />
     <ClCompile Include="Person.c">
       <SubType>
@@ -158,6 +159,7 @@
     <ClInclude Include="aquaLib\FileUtils.h" />
     <ClInclude Include="aquaLib\Storage.h" />
     <ClInclude Include="aquaLib\StringUtils.h" />
+    <ClInclude Include="cryptoLib\NativeCrypto.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>

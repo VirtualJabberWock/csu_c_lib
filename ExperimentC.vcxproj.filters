@@ -22,6 +22,9 @@
     <Filter Include="Файлы ресурсов\test">
       <UniqueIdentifier>{a75329e0-7355-4179-a656-a94ad5c61010}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы ресурсов\crypto">
+      <UniqueIdentifier>{f9612c73-8a87-460f-a4c9-90c10241cffe}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
@@ -45,6 +48,9 @@
     <ClCompile Include="aquaLib\Storage.c">
       <Filter>Файлы ресурсов\oop</Filter>
     </ClCompile>
+    <ClCompile Include="cryptoLib\NativeCrypto.c">
+      <Filter>Файлы ресурсов\crypto</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="aquaLib\DebugUtils.h">
@@ -67,6 +73,9 @@
     </ClInclude>
     <ClInclude Include="aquaLib\Storage.h">
       <Filter>Файлы ресурсов\oop</Filter>
+    </ClInclude>
+    <ClInclude Include="cryptoLib\NativeCrypto.h">
+      <Filter>Файлы ресурсов\crypto</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
