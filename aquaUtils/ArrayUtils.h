@@ -6,30 +6,30 @@
 
 // TODO :: DEFINE SOMETHING -> NOT COPY ALL FUNTCIONS
 
-void* initList(int size, int b_size);
+void* initArray(int size, int b_size);
 
 //INT
-void expandIntList(int** array, int new_size);
-void fillIntList(int* array, int len, int value);
-void copyIntList(int* from, int* to, int begin, int end);
-void putToIntList(int** list, int* list_size, int n);
+void expandIntArray(int** array, int new_size);
+void fillIntArray(int* array, int len, int value);
+void copyIntArray(int* from, int* to, int begin, int end);
+void putToIntArray(int** list, int* list_size, int n);
 
 //INT64
-void expand64List(__int64** array, int new_size);
-void fill64List(__int64* array, int len, __int64 value);
-void copy64List(__int64* from, __int64* to, int begin, int end);
-void putTo64List(__int64** list, int* list_size, __int64 n);
+void expand64Array(__int64** array, int new_size);
+void fill64Array(__int64* array, int len, __int64 value);
+void copy64Array(__int64* from, __int64* to, int begin, int end);
+void putTo64Array(__int64** list, int* list_size, __int64 n);
 //
 
 //Double
-void expandDoubleList(double** array, int new_size);
-void putToDoubleList(double** list, int* list_size, double n);
+void expandDoubleArray(double** array, int new_size);
+void putToDoubleArray(double** list, int* list_size, double n);
 //
 
 //Char
-void expandCharList(char** list, int new_size);
-void subCharList(char* from, char* to, int begin, int end);
-void pushToCharList(char** list, int* list_size, char chr);
+void expandCharArray(char** list, int new_size);
+void subCharArray(char* from, char* to, int begin, int end);
+void pushToCharArray(char** list, int* list_size, char chr);
 /* Builds const string from dynamic char array & Dispose resources (free memory) */
 const char* buildString(char* list, int list_size);
 const char* buildLine(char* list, int list_size);

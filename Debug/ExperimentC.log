@@ -1,2 +1,16 @@
-﻿  main.c
-  ExperimentC.vcxproj -> C:\Users\user\source\repos\csu_c_lib\Debug\ExperimentC.exe
+﻿  Storage.c
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(25,37): warning C4133: =: несовместимые типы - из "void **" в "const char **"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(49,24): warning C4133: =: несовместимые типы - из "void **" в "const char **"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(86,1): warning C4090: инициализация: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(113,35): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(113,61): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(132,24): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(132,39): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(142,68): warning C4133: функция: несовместимые типы - из "LongV *" в "IntV *"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(143,70): warning C4133: функция: несовместимые типы - из "StringV *" в "IntV *"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(144,70): warning C4133: функция: несовместимые типы - из "DoubleV *" в "IntV *"
+  main.c
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\winerror.h(960,1): warning C4005: ERROR_BUFFER_OVERFLOW: изменение макроопределения
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\FileUtils.h(12): message : см. предыдущее определение "ERROR_BUFFER_OVERFLOW"
+  Создание кода...
+  ExperimentC.vcxproj -> C:\Users\aqua\source\repos\ExperimentC\Debug\ExperimentC.exe

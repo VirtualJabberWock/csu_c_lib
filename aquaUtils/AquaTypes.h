@@ -2,9 +2,6 @@
 
 #include "ArrayUtils.h"
 
-#define Integer int
-#define Long __int64
-#define Double double
 #define Byte char
 #define Bool char
 
@@ -37,7 +34,7 @@ typedef struct IntVS {
 } IntV;
 
 typedef struct LongVS {
-	Long* ptr;
+	__int64* ptr;
 	int size;
 	void (*put) (struct LongVS* self, __int64 value);
 	void (*clear)(struct LongVS* self);
@@ -60,7 +57,7 @@ typedef struct DoubleVS {
 typedef struct StorageS {
 
 	void (*putInt)    (__self__, int value);
-	void (*putLong)   (__self__, Long value);
+	void (*putLong)   (__self__, __int64 value);
 	void (*putDouble) (__self__, double value);
 	void (*putString) (__self__, string value);
 
@@ -90,24 +87,22 @@ void InitDoubleV(DoubleV* v);
 void Storage_Free(__self);
 
 void Storage_PutInt(__self, int value);
-void Storage_PutLong(__self, Long value);
+void Storage_PutLong(__self, __int64 value);
 void Storage_PutString(__self, string value);
 void Storage_PutDouble(__self, double value);
 
-void __Vector_PutInt(IntV* v, int value);
-void __Vector_PutLong(LongV* v, Long value);
-void __Vector_PutString(StringV* v, string value);
-void __Vector_PutDouble(DoubleV* v, double value);
+void _Default_Vector_PutInt(IntV* v, int value);
+void _Default_Vector_PutLong(LongV* v, __int64 value);
+void _Default_Vector_PutString(StringV* v, string value);
+void _Default_Vector_PutDouble(DoubleV* v, double value);
 
 void Storage_ClearInt(__self);
 void Storage_ClearLong(__self);
 void Storage_ClearString(__self);
 void Storage_ClearDouble(__self);
 
-void __Vector_ClearInt(IntV* v);
-void __Vector_ClearLong(LongV* v);
-void __Vector_ClearString(StringV* v);
-void __Vector_ClearDouble(DoubleV* v);
-
-void* _Storage_FP(void* s, int b_size);
+void _Default_Vector_ClearInt(IntV* v);
+void _Default_Vector_ClearLong(LongV* v);
+void _Default_Vector_ClearString(StringV* v);
+void _Default_Vector_ClearDouble(DoubleV* v);
 
