@@ -76,15 +76,15 @@ void InitDoubleV(DoubleV* v)
 
 void InitStringBuilder(StringBuilder* builder, string base_nt)
 {
-	int j = 0;
 	builder->buffer = initArray(0, sizeof(char));
+	builder->b_size = 0;
 	if (SUS_getStringLength(base_nt) > 0) {
 		int j = 0;
 		while (base_nt[j] != '\0') {
-			pushToCharArray(&(builder->buffer), &j, base_nt[j]);
+			pushToCharArray(&(builder->buffer), &builder->b_size, base_nt[j]);
+			j++;
 		}
 	}
-	builder->b_size = j;
 	builder->add = _Default_SB_Append;
 	builder->trim = _Default_SB_Trim;
 	builder->build = _Default_SB_Build;

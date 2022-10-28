@@ -1,24 +1,28 @@
 #include "pch.h"
 #include "cryptoUtils/NativeCrypto.h"
-#include <Windows.h>
+#include <locale.h>
 
 int main() {
 
+	setlocale(LC_ALL, "Russian");
 	StringBuilder sb;
 	InitStringBuilder(&sb, "");
+	StringBuilder* _ = &sb;
 	sb.add(&sb, "Hello, ");
 	sb.add(&sb, "World!");
 	printf(sb.build(&sb));
 	printf("\n\n");
-	sb.add(&sb, "\nAnd another line!!!");
-	sb.add(&sb, "\nYes we do string concatenation like");
+	sb.add(&sb, "\nCледующая линия!!!");
+	sb.add(&sb, "\nМы можем делать конкатенацию строк");
 	sb.add(&sb, " ");
-	sb.add(&sb, "this!");
+	sb.add(&sb, "вот так!");
 	printf(sb.buildAndDispose(&sb));
 	printf("\n\n");
 
-	InitStringBuilder(&sb, "Also we can start with some string!\n");
-	sb.add(&sb, "And")->add(&sb, " do it ")->add(&sb, "like a chain");
+	InitStringBuilder(&sb, "Можем начать с конкретной строки!\n");
+
+	sb.add(_, "А потом")->add(_, " соеденить ")->add(_, "цепочку!");
+
 	printf(sb.buildAndDispose(&sb));
 	printf("\n\n");
 

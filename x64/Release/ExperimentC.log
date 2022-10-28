@@ -1,8 +1,19 @@
-﻿  main.c
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.22621.0\shared\winerror.h(960,1): warning C4005: ERROR_BUFFER_OVERFLOW: изменение макроопределения
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\FileUtils.h(12): message : см. предыдущее определение "ERROR_BUFFER_OVERFLOW"
+﻿  AquaTypes.c
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(23,37): warning C4133: =: несовместимые типы - из "void **" в "const char **"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(47,24): warning C4133: =: несовместимые типы - из "void **" в "const char **"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(102,1): warning C4090: инициализация: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(129,35): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(129,61): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(152,24): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(152,39): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(163,75): warning C4133: функция: несовместимые типы - из "LongV *" в "IntV *"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(164,77): warning C4133: функция: несовместимые типы - из "StringV *" в "IntV *"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(165,77): warning C4133: функция: несовместимые типы - из "DoubleV *" в "IntV *"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(187,19): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(188,24): warning C4133: =: несовместимые типы - из "void **" в "const char **"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(204,35): warning C4090: =: разные квалификаторы "const"
   Создание кода
-  1 of 22 functions ( 4.5%) were compiled, the rest were copied from previous compilation.
+  2 of 22 functions ( 9.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
