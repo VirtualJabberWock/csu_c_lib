@@ -1,9 +1,15 @@
 #include "pch.h"
-#include "cryptoLib/NativeCrypto.h"
+#include "cryptoUtils/NativeCrypto.h"
+#include "aquaUtils/Storage.h"
 
 int main() {
-	for (unsigned char i = 0; i < 255; i++) {
-		unsigned char a = __crypto_chr_hash(i);
-		printf("[%00x]~%x\n", i, a);
-	}
+	IntV v;
+	InitIntV(&v);
+	v.put(&v, 10);
+	v.put(&v, 111);
+	v.put(&v, 123);
+	v.put(&v, 412);
+	printf("%d", v.ptr[2]);
+	printf(" ~ third element from array[%d]", v.size);
+	v.clear(&v); //todo fix error
 }

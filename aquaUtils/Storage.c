@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "DynamicList.h"
+#include "ArrayUtils.h"
 #include "Storage.h"
 #include "StringUtils.h"
 
@@ -38,6 +38,42 @@ Storage Storage_New()
 	self.free = Storage_Free;
 
 	return self;
+}
+
+void InitStringV(StringV* v)
+{
+	v->__notnull__ = 1;
+	v->put = __Vector_PutString;
+	v->clear = __Vector_ClearString;
+	v->size = 0;
+	v->ptr = initBucket(0);
+}
+
+void InitIntV(IntV* v)
+{
+	v->__notnull__ = 1;
+	v->put = __Vector_PutInt;
+	v->clear = __Vector_ClearInt;
+	v->size = 0;
+	v->ptr = initList(0, sizeof(int));
+}
+
+void InitLongV(LongV* v)
+{
+	v->__notnull__ = 1;
+	v->put = __Vector_PutLong;
+	v->clear = __Vector_ClearLong;
+	v->size = 0;
+	v->ptr = initList(0, sizeof(Long));
+}
+
+void InitDoubleV(DoubleV* v)
+{
+	v->__notnull__ = 1;
+	v->put = __Vector_PutDouble;
+	v->clear = __Vector_ClearDouble;
+	v->size = 0;
+	v->ptr = initList(0, sizeof(double));
 }
 
 void Storage_Free(__self) {
@@ -80,34 +116,55 @@ void Storage_PutString(__self, string value)
 void Storage_PutDouble(__self, double value)
 {
 	putToDoubleList(&(self->_dataDV.ptr), &(self->_dataDV.size), value);
-}    
+}
+
+void __Vector_PutInt(IntV* v, int value)
+{
+	putToIntList(&(v->ptr), &(v->size), value);
+}
+void __Vector_PutLong(LongV* v, Long value)
+{
+	putTo64List(&(v->ptr), &(v->size), value);
+}
+void __Vector_PutString(StringV* v, string value)
+{
+	string a = str_copy(value);
+	pushToBucket(&(v->ptr), &(v->size), a);
+}
+void __Vector_PutDouble(DoubleV* v, double value)
+{
+	putToDoubleList(&(v->ptr), &(v->size), value);
+}
 
 // CLEAR
 
-void Storage_ClearInt(__self) { _Storage_ClearData(self, _Type_Integer); }
-void Storage_ClearLong(__self) { _Storage_ClearData(self, _Type_Long); }
-void Storage_ClearString(__self) { _Storage_ClearData(self, _Type_String); }
-void Storage_ClearDouble(__self) { _Storage_ClearData(self, _Type_Double); }
+void Storage_ClearInt(__self) { __Vector_ClearInt(&(self->_data32)); }
+void Storage_ClearLong(__self) { __Vector_ClearInt(&(self->_data64)); }
+void Storage_ClearString(__self) { __Vector_ClearInt(&(self->_dataSB)); }
+void Storage_ClearDouble(__self) { __Vector_ClearInt(&(self->_dataDV)); }
 
-void _Storage_ClearData(__self, int type) {
-	if (type == _Type_Integer) {
-		self->_data32.ptr = (int* )_Storage_FP(self->_data32.ptr, sizeof(int));
-		self->_data32.size = 0;
-	}
-	if (type == _Type_Long) {
-		self->_data64.ptr = (__int64*)_Storage_FP(self->_data64.ptr, 8);
-		self->_data64.size = 0;
-	}
-	if (type == _Type_Double) {
-		self->_dataDV.ptr = (double*)_Storage_FP(self->_dataDV.ptr, sizeof(double));
-		self->_dataDV.size = 0;
-	}
-	if (type == _Type_String) {
-		freeBucket(self->_dataSB.ptr, self->_dataSB.size);
-		self->_dataSB.ptr = initBucket(0);
-		self->_dataSB.size = 0;
-	}
+void __Vector_ClearInt(IntV* v)
+{
+	v->ptr = (int*)_Storage_FP(v->ptr, sizeof(int));
+	v->size = 0;
 }
+void __Vector_ClearLong(LongV* v)
+{
+	v->ptr = (Long*)_Storage_FP(v->ptr, sizeof(__int64));
+	v->size = 0;
+}
+void __Vector_ClearDouble(DoubleV* v)
+{
+	v->ptr = (double*)_Storage_FP(v->ptr, sizeof(double));
+	v->size = 0;
+}
+void __Vector_ClearString(StringV* v)
+{
+	freeBucket(v->ptr, v->size);
+	v->ptr = initBucket(0);
+	v->size = 0;
+}
+
 void* _Storage_FP(void* ptr, int b_size) // free pointer
 {
 	if (ptr != 0) {

@@ -141,25 +141,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="aquaLib\DebugUtils.c" />
-    <ClCompile Include="aquaLib\DynamicList.c" />
-    <ClCompile Include="aquaLib\FileUtils.c" />
-    <ClCompile Include="aquaLib\Storage.c" />
-    <ClCompile Include="aquaLib\StringUtils.c" />
-    <ClCompile Include="cryptoLib\NativeCrypto.c" />
+    <ClCompile Include="aquaUtils\DebugUtils.c" />
+    <ClCompile Include="aquaUtils\ArrayUtils.c" />
+    <ClCompile Include="aquaUtils\FileUtils.c" />
+    <ClCompile Include="aquaUtils\Storage.c" />
+    <ClCompile Include="aquaUtils\StringUtils.c" />
+    <ClCompile Include="cryptoUtils\NativeCrypto.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="Person.c">
-      <SubType>
-      </SubType>
-    </ClCompile>
+    <ClCompile Include="Person.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="aquaLib\DebugUtils.h" />
-    <ClInclude Include="aquaLib\DynamicList.h" />
-    <ClInclude Include="aquaLib\FileUtils.h" />
-    <ClInclude Include="aquaLib\Storage.h" />
-    <ClInclude Include="aquaLib\StringUtils.h" />
-    <ClInclude Include="cryptoLib\NativeCrypto.h" />
+    <ClInclude Include="aquaUtils\DebugUtils.h" />
+    <ClInclude Include="aquaUtils\ArrayUtils.h" />
+    <ClInclude Include="aquaUtils\FileUtils.h" />
+    <ClInclude Include="aquaUtils\Storage.h" />
+    <ClInclude Include="aquaUtils\StringUtils.h" />
+    <ClInclude Include="cryptoUtils\NativeCrypto.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Person.h" />
   </ItemGroup>

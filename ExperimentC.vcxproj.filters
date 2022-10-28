@@ -13,9 +13,6 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="aquaLib">
-      <UniqueIdentifier>{1792957d-7212-4318-8247-3af43edb6331}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Файлы ресурсов\oop">
       <UniqueIdentifier>{30aea2df-668d-481b-af5a-2dcd1e007872}</UniqueIdentifier>
     </Filter>
@@ -25,57 +22,60 @@
     <Filter Include="Файлы ресурсов\crypto">
       <UniqueIdentifier>{f9612c73-8a87-460f-a4c9-90c10241cffe}</UniqueIdentifier>
     </Filter>
+    <Filter Include="aquaUtils">
+      <UniqueIdentifier>{1792957d-7212-4318-8247-3af43edb6331}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="aquaLib\DebugUtils.c">
-      <Filter>aquaLib</Filter>
+    <ClCompile Include="aquaUtils\DebugUtils.c">
+      <Filter>aquaUtils</Filter>
     </ClCompile>
-    <ClCompile Include="aquaLib\DynamicList.c">
-      <Filter>aquaLib</Filter>
+    <ClCompile Include="aquaUtils\FileUtils.c">
+      <Filter>aquaUtils</Filter>
     </ClCompile>
-    <ClCompile Include="aquaLib\FileUtils.c">
-      <Filter>aquaLib</Filter>
+    <ClCompile Include="aquaUtils\StringUtils.c">
+      <Filter>aquaUtils</Filter>
     </ClCompile>
-    <ClCompile Include="aquaLib\StringUtils.c">
-      <Filter>aquaLib</Filter>
+    <ClCompile Include="aquaUtils\Storage.c">
+      <Filter>Файлы ресурсов\oop</Filter>
+    </ClCompile>
+    <ClCompile Include="cryptoUtils\NativeCrypto.c">
+      <Filter>Файлы ресурсов\crypto</Filter>
     </ClCompile>
     <ClCompile Include="Person.c">
       <Filter>Файлы ресурсов\test</Filter>
     </ClCompile>
-    <ClCompile Include="aquaLib\Storage.c">
-      <Filter>Файлы ресурсов\oop</Filter>
-    </ClCompile>
-    <ClCompile Include="cryptoLib\NativeCrypto.c">
-      <Filter>Файлы ресурсов\crypto</Filter>
+    <ClCompile Include="aquaUtils\ArrayUtils.c">
+      <Filter>aquaUtils</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="aquaLib\DebugUtils.h">
-      <Filter>aquaLib</Filter>
-    </ClInclude>
-    <ClInclude Include="aquaLib\DynamicList.h">
-      <Filter>aquaLib</Filter>
-    </ClInclude>
-    <ClInclude Include="aquaLib\FileUtils.h">
-      <Filter>aquaLib</Filter>
-    </ClInclude>
-    <ClInclude Include="aquaLib\StringUtils.h">
-      <Filter>aquaLib</Filter>
-    </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="Person.h">
       <Filter>Файлы ресурсов\test</Filter>
     </ClInclude>
-    <ClInclude Include="aquaLib\Storage.h">
+    <ClInclude Include="aquaUtils\DebugUtils.h">
+      <Filter>aquaUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="aquaUtils\FileUtils.h">
+      <Filter>aquaUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="aquaUtils\StringUtils.h">
+      <Filter>aquaUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="aquaUtils\Storage.h">
       <Filter>Файлы ресурсов\oop</Filter>
     </ClInclude>
-    <ClInclude Include="cryptoLib\NativeCrypto.h">
+    <ClInclude Include="cryptoUtils\NativeCrypto.h">
       <Filter>Файлы ресурсов\crypto</Filter>
+    </ClInclude>
+    <ClInclude Include="aquaUtils\ArrayUtils.h">
+      <Filter>aquaUtils</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

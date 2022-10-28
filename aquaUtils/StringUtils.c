@@ -1,5 +1,5 @@
 #include "StringUtils.h"
-#include "DynamicList.h"
+#include "ArrayUtils.h"
 
 string clearDublicateSpaces(string str)
 {
