@@ -21,7 +21,7 @@
 typedef struct tagStringBuilder {
 	char* buffer;
 	int b_size;
-	void (*append) (struct tagStringBuilder* self, string str_nt);
+	struct tagStringBuilder* (*append) (struct tagStringBuilder* self, string str_nt);
 	void (*trim) (struct tagStringBuilder* self);
 	//void (*replaceAll) (struct tagStringBuilder* self, string pattern, string to); //TODO!!!
 	//int (*length) (...) //TODO ???
@@ -124,7 +124,7 @@ void _Default_Vector_ClearLong(LongV* v);
 void _Default_Vector_ClearString(StringV* v);
 void _Default_Vector_ClearDouble(DoubleV* v);
 
-void _Default_SB_Append(StringBuilder* sb, string str);
+StringBuilder* _Default_SB_Append(StringBuilder* sb, string str);
 void _Default_SB_Trim(StringBuilder* sb);
 string _Default_SB_Build(StringBuilder* sb);
 string _Default_SB_BuildAndDispose(StringBuilder* sb);

@@ -189,13 +189,14 @@ void _Default_Vector_ClearString(StringV* v)
 	v->size = 0;
 }
 
-void _Default_SB_Append(StringBuilder* sb, string str) {
+StringBuilder* _Default_SB_Append(StringBuilder* sb, string str) {
 	if (sb->buffer == 0) panic_NPE();
 	int i = 0;
 	while (str[i] != '\0') {
 		pushToCharArray(&(sb->buffer), &(sb->b_size), str[i]);
 		i++;
 	}
+	return sb;
 }
 
 void _Default_SB_Trim(StringBuilder* sb) {
