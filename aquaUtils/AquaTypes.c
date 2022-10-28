@@ -85,7 +85,7 @@ void InitStringBuilder(StringBuilder* builder, string base_nt)
 		}
 	}
 	builder->b_size = j;
-	builder->append = _Default_SB_Append;
+	builder->add = _Default_SB_Append;
 	builder->trim = _Default_SB_Trim;
 	builder->build = _Default_SB_Build;
 	builder->buildAndDispose = _Default_SB_BuildAndDispose;

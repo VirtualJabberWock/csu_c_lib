@@ -7,7 +7,7 @@ int main() {
 	StringBuilder sb;
 	InitStringBuilder(&sb, "");
 	sb.add(&sb, "Hello, ");
-	sb.add(&sb,"World!");
+	sb.add(&sb, "World!");
 	printf(sb.build(&sb));
 	printf("\n\n");
 	sb.add(&sb, "\nAnd another line!!!");
@@ -21,4 +21,5 @@ int main() {
 	sb.add(&sb, "And")->add(&sb, " do it ")->add(&sb, "like a chain");
 	printf(sb.buildAndDispose(&sb));
 	printf("\n\n");
+
 }

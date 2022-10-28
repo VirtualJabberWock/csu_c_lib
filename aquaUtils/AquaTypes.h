@@ -21,10 +21,10 @@
 typedef struct tagStringBuilder {
 	char* buffer;
 	int b_size;
-	struct tagStringBuilder* (*append) (struct tagStringBuilder* self, string str_nt);
+	// hmmm why not "append"??? it maybe right name, but... you know... korotkiy kod tipo
+	struct tagStringBuilder* (*add) (struct tagStringBuilder* self, string str_nt);
 	void (*trim) (struct tagStringBuilder* self);
 	//void (*replaceAll) (struct tagStringBuilder* self, string pattern, string to); //TODO!!!
-	//int (*length) (...) //TODO ???
 	string (*build) (struct tagStringBuilder* self);
 	string (*buildAndDispose) (struct tagStringBuilder* self);
 	Bool __notnull__;
