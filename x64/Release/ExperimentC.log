@@ -1,20 +1,24 @@
 ﻿  AquaTypes.c
 C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(23,37): warning C4133: =: несовместимые типы - из "void **" в "const char **"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(47,24): warning C4133: =: несовместимые типы - из "void **" в "const char **"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(102,1): warning C4090: инициализация: разные квалификаторы "const"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(129,35): warning C4090: функция: разные квалификаторы "const"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(129,61): warning C4090: функция: разные квалификаторы "const"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(152,24): warning C4090: функция: разные квалификаторы "const"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(152,39): warning C4090: функция: разные квалификаторы "const"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(163,75): warning C4133: функция: несовместимые типы - из "LongV *" в "IntV *"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(164,77): warning C4133: функция: несовместимые типы - из "StringV *" в "IntV *"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(165,77): warning C4133: функция: несовместимые типы - из "DoubleV *" в "IntV *"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(187,19): warning C4090: функция: разные квалификаторы "const"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(188,24): warning C4133: =: несовместимые типы - из "void **" в "const char **"
-C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(204,35): warning C4090: =: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(61,24): warning C4133: =: несовместимые типы - из "void **" в "const char **"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(116,1): warning C4090: инициализация: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(143,35): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(143,61): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(166,24): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(166,39): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(177,75): warning C4133: функция: несовместимые типы - из "LongV *" в "IntV *"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(178,77): warning C4133: функция: несовместимые типы - из "StringV *" в "IntV *"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(179,77): warning C4133: функция: несовместимые типы - из "DoubleV *" в "IntV *"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(201,19): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(202,24): warning C4133: =: несовместимые типы - из "void **" в "const char **"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\AquaTypes.c(218,35): warning C4090: =: разные квалификаторы "const"
+  FileUtils.c
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\FileUtils.c(31,43): warning C4098: readAllLines_s: функция типа "void", возвращающая значение
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\FileUtils.c(35,39): warning C4047: =: "int" отличается по уровням косвенного обращения от "char *"
+  main.c
   Создание кода
-  2 of 22 functions ( 9.1%) were compiled, the rest were copied from previous compilation.
+  10 of 27 functions (37.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+    4 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
   ExperimentC.vcxproj -> C:\Users\aqua\source\repos\ExperimentC\x64\Release\ExperimentC.exe

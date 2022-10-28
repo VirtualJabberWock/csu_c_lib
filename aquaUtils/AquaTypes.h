@@ -36,7 +36,7 @@ typedef struct StringVS {
 	void (*put) (struct StringVS* self, string value);
 	void (*clear)(struct StringVS* self);
 	Bool __notnull__; // (self == null) ? 0 : 1
-} StringV;
+} StringV, *StringVP;
 
 
 typedef struct IntVS {
@@ -45,7 +45,7 @@ typedef struct IntVS {
 	void (*put) (struct IntVS* self, int value);
 	void (*clear)(struct IntVS* self);
 	Bool __notnull__; // (self == null) ? 0 : 1
-} IntV;
+} IntV, *IntVP;
 
 typedef struct LongVS {
 	__int64* ptr;
@@ -91,7 +91,9 @@ typedef struct StorageS {
 
 // STORAGE DEFAULT
 
-Storage Storage_New();
+Storage NewStorage();
+StringVP NewStringV();
+IntVP NewIntV();
 
 void InitStringV(StringV* v);
 void InitIntV(IntV* v);

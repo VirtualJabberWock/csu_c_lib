@@ -3,7 +3,7 @@
 #include "AquaTypes.h"
 #include "StringUtils.h"
 
-Storage Storage_New()
+Storage NewStorage()
 {
 	Storage self;
 	//DATA
@@ -36,6 +36,20 @@ Storage Storage_New()
 	self.free = Storage_Free;
 
 	return self;
+}
+
+StringVP NewStringV()
+{
+	StringV sv;
+	InitStringV(&sv);
+	return &sv;
+}
+
+IntVP NewIntV()
+{
+	IntV iv;
+	InitIntV(&iv);
+	return &iv;
 }
 
 void InitStringV(StringV* v)

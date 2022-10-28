@@ -26,30 +26,8 @@ void closeFile(FILE* hFile) {
     handleIOError(fclose(hFile), "CLOSING_FILE_ERROR: ");
 }
 
-int readAllNumbers(FILE* hFile, int** array, int* readed, string format) {
-    int tmp;
-    int i = 0;
-    if (hFile == 0) return ERROR_CANT_READ;
-    while (fscanf_s(hFile, format, &tmp) != EOF) {
-        expandIntArray(array, i + 1);
-        (*array)[i] = tmp;
-        i++;
-    }
-    *readed = i;
-    if (i == 0) return ERROR_CANT_READ;
-    else return STATUS_SUCCESS;
-}
-
-void readAllNumbers_s(FILE* hFile, int** array, int* readed, string format) {
-    handleIOError(
-        readAllNumbers(hFile, array, readed, format),
-        "FILE_SCAN_ERROR: "
-    );
-}
-
-void readAllLines_s(FILE* hFile, string** bucket, int* readed) {
+void readAllLines_s(FILE* hFile, StringV* sv) {
     int status = STATUS_SUCCESS;
-    int i = 0;
     if (hFile == 0) return ERROR_CANT_READ;
     int s = 1;
     while (s != 0) {
@@ -61,20 +39,17 @@ void readAllLines_s(FILE* hFile, string** bucket, int* readed) {
             panic("[!panic]");
         }
         if (s == 0) break;
-        expandBucket(bucket, i + 1);
-        (*bucket)[i] = buildLine(buffer, 2048);
-        i++; 
+        sv->put(sv, buildLine(buffer, 2048));
     }
-    *readed = i;
     handleIOError(status, "Input file: ");
 }
 
-void writeAllLines_s(FILE* hFile, string* lines, int len)
+void writeAllLines_s(FILE* hFile, StringV lines)
 {
     int status = STATUS_SUCCESS;
     int tmp;
-    for (int i = 0; i < len; i++) {
-        tmp = fprintf_s(hFile, "%s", lines[i]);
+    for (int i = 0; i < lines.size; i++) {
+        tmp = fprintf_s(hFile, "%s", lines.ptr[i]);
         if (tmp == 0) 
         {
              status = ERROR_CANT_WRITE;
@@ -88,22 +63,6 @@ void writeAllLines_s(FILE* hFile, string* lines, int len)
     handleIOError(status, "File writer: ");
 }
 
-int writeAllNumbers(FILE* hFile, int* array, int len, string format) {
-    int tmp;
-    for (int i = 0; i < len; i++) {
-        tmp = fprintf_s(hFile, "%d ", array[i]);
-        if (tmp == 0) return ERROR_CANT_WRITE;
-        if (tmp < 0) return tmp;
-    }
-    return STATUS_SUCCESS;
-}
-
-void writeAllNumbers_s(FILE* hFile, int* array, int len, string format) {
-    handleIOError(
-        writeAllNumbers(hFile, array, len, format),
-        "FILE_WRITE_ERROR: "
-    );
-}
 
 void handleIOError(int status, string msg) {
     if (status == STATUS_SUCCESS) {
