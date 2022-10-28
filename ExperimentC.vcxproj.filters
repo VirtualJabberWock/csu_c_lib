@@ -39,9 +39,6 @@
     <ClCompile Include="aquaUtils\StringUtils.c">
       <Filter>aquaUtils</Filter>
     </ClCompile>
-    <ClCompile Include="aquaUtils\Storage.c">
-      <Filter>Файлы ресурсов\oop</Filter>
-    </ClCompile>
     <ClCompile Include="cryptoUtils\NativeCrypto.c">
       <Filter>Файлы ресурсов\crypto</Filter>
     </ClCompile>
@@ -50,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="aquaUtils\ArrayUtils.c">
       <Filter>aquaUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="aquaUtils\AquaTypes.c">
+      <Filter>Файлы ресурсов\oop</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -68,14 +68,14 @@
     <ClInclude Include="aquaUtils\StringUtils.h">
       <Filter>aquaUtils</Filter>
     </ClInclude>
-    <ClInclude Include="aquaUtils\Storage.h">
-      <Filter>Файлы ресурсов\oop</Filter>
-    </ClInclude>
     <ClInclude Include="cryptoUtils\NativeCrypto.h">
       <Filter>Файлы ресурсов\crypto</Filter>
     </ClInclude>
     <ClInclude Include="aquaUtils\ArrayUtils.h">
       <Filter>aquaUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="aquaUtils\AquaTypes.h">
+      <Filter>Файлы ресурсов\oop</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

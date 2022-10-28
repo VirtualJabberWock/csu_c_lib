@@ -144,7 +144,7 @@
     <ClCompile Include="aquaUtils\DebugUtils.c" />
     <ClCompile Include="aquaUtils\ArrayUtils.c" />
     <ClCompile Include="aquaUtils\FileUtils.c" />
-    <ClCompile Include="aquaUtils\Storage.c" />
+    <ClCompile Include="aquaUtils\AquaTypes.c" />
     <ClCompile Include="aquaUtils\StringUtils.c" />
     <ClCompile Include="cryptoUtils\NativeCrypto.c" />
     <ClCompile Include="main.c" />
@@ -154,7 +154,7 @@
     <ClInclude Include="aquaUtils\DebugUtils.h" />
     <ClInclude Include="aquaUtils\ArrayUtils.h" />
     <ClInclude Include="aquaUtils\FileUtils.h" />
-    <ClInclude Include="aquaUtils\Storage.h" />
+    <ClInclude Include="aquaUtils\AquaTypes.h" />
     <ClInclude Include="aquaUtils\StringUtils.h" />
     <ClInclude Include="cryptoUtils\NativeCrypto.h" />
     <ClInclude Include="pch.h" />

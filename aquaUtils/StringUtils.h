@@ -6,21 +6,22 @@
 #define F_Scan512 "%512[^\n\r]"
 #define F_Scan1024 "%1024[^\n\r]"
 
-string clearDublicateSpaces(string str);
-int getStringLength(string str);
-int parseInteger32(string str, __int32* out);
-int isStringNumber(string str);
+// UTILS
 
-string trim(string str);
-string* split(string, char delimiter, int* parts_count);
+string SUS_clearDublicateSpaces(string str);
+int SUS_getStringLength(string str);
+int SUS_parseInteger32(string str, __int32* out);
+int SUS_isStringNumber(string str);
+string SUS_str_copy(string str1);
 
-string str_copy(string str1);
+// UTILS + STRING_BUILDER HELPERS
 
-string str_c(string str1, string str2);
-
-/* replace every '%' to str2 in format string */
-string str_f(string format, string str2);
-void str_unlock(string const_str, int* out_len, CharList* out_buffer);
-string str_bucket_assemble(string* bucket, int bucket_size, char delim);
+string SUS_trim(string str);
+string* SUS_split(string, char delimiter, int* parts_count);
+string SUS_str_c(string str1, string str2);
+string SUS_str_f(string format, string str2);
+void SUS_str_unlock(string const_str, int* out_len, CharList* out_buffer);
+string SUS_str_lock(char* buffer, int size);
+string SUS_str_bucket_assemble(string* bucket, int bucket_size, char delim);
 
 //a

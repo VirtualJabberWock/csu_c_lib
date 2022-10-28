@@ -30,6 +30,11 @@ int panic_e(string msg)
 	return 0;
 }
 
+void panic_NPE()
+{
+	panic("NullPointerException!");
+}
+
 void printIntArray(int* array, int len) {
 	printf("\n");
 	for (int i = 0; i < len; i++) {

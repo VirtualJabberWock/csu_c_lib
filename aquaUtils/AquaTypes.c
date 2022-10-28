@@ -74,6 +74,24 @@ void InitDoubleV(DoubleV* v)
 	v->ptr = initArray(0, sizeof(double));
 }
 
+void InitStringBuilder(StringBuilder* builder, string base_nt)
+{
+	int j = 0;
+	builder->buffer = initArray(0, sizeof(char));
+	if (SUS_getStringLength(base_nt) > 0) {
+		int j = 0;
+		while (base_nt[j] != '\0') {
+			pushToCharArray(&(builder->buffer), &j, base_nt[j]);
+		}
+	}
+	builder->b_size = j;
+	builder->append = _Default_SB_Append;
+	builder->trim = _Default_SB_Trim;
+	builder->build = _Default_SB_Build;
+	builder->buildAndDispose = _Default_SB_BuildAndDispose;
+	builder->__notnull__ = 1;
+}
+
 void Storage_Free(__self) {
 
 	if (self == 0) return;
@@ -107,7 +125,7 @@ void Storage_PutLong(__self, __int64 value)
 
 void Storage_PutString(__self, string value)
 {
-	string a = str_copy(value);
+	string a = SUS_str_copy(value);
 	pushToBucket(&(self->_dataSB.ptr), &(self->_dataSB.size), a);
 }
 
@@ -116,19 +134,24 @@ void Storage_PutDouble(__self, double value)
 	putToDoubleArray(&(self->_dataDV.ptr), &(self->_dataDV.size), value);
 }
 
+//
+
 void _Default_Vector_PutInt(IntV* v, int value)
 {
 	putToIntArray(&(v->ptr), &(v->size), value);
 }
+
 void _Default_Vector_PutLong(LongV* v, __int64 value)
 {
 	putTo64Array(&(v->ptr), &(v->size), value);
 }
+
 void _Default_Vector_PutString(StringV* v, string value)
 {
-	string a = str_copy(value);
+	string a = SUS_str_copy(value);
 	pushToBucket(&(v->ptr), &(v->size), a);
 }
+
 void _Default_Vector_PutDouble(DoubleV* v, double value)
 {
 	putToDoubleArray(&(v->ptr), &(v->size), value);
@@ -164,4 +187,31 @@ void _Default_Vector_ClearString(StringV* v)
 	freeBucket(v->ptr, v->size);
 	v->ptr = initBucket(0);
 	v->size = 0;
+}
+
+void _Default_SB_Append(StringBuilder* sb, string str) {
+	if (sb->buffer == 0) panic_NPE();
+	int i = 0;
+	while (str[i] != '\0') {
+		pushToCharArray(&(sb->buffer), &(sb->b_size), str[i]);
+		i++;
+	}
+}
+
+void _Default_SB_Trim(StringBuilder* sb) {
+	if (sb->buffer == 0) panic_NPE();
+	sb->buffer = SUS_trim(sb->buffer);
+}
+
+string _Default_SB_Build(StringBuilder* sb) {
+	if (sb->buffer == 0) panic_NPE();
+	return SUS_str_lock(sb->buffer, sb->b_size);
+}
+
+string _Default_SB_BuildAndDispose(StringBuilder* sb) {
+	if (sb->buffer == 0) panic_NPE();
+	string r = buildString(sb->buffer, sb->b_size);
+	sb->buffer = initArray(0, sizeof(char));
+	sb->b_size = 0;
+	return r;
 }

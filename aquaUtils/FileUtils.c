@@ -31,7 +31,7 @@ int readAllNumbers(FILE* hFile, int** array, int* readed, string format) {
     int i = 0;
     if (hFile == 0) return ERROR_CANT_READ;
     while (fscanf_s(hFile, format, &tmp) != EOF) {
-        expandIntList(array, i + 1);
+        expandIntArray(array, i + 1);
         (*array)[i] = tmp;
         i++;
     }
@@ -53,7 +53,7 @@ void readAllLines_s(FILE* hFile, string** bucket, int* readed) {
     if (hFile == 0) return ERROR_CANT_READ;
     int s = 1;
     while (s != 0) {
-        char* buffer = initList(2048, 1);
+        char* buffer = initArray(2048, 1);
         s = fgets(buffer, 2048, hFile);
         if (ferror(hFile) != 0) {
             _fcloseall();
@@ -123,7 +123,7 @@ void handleIOError(int status, string msg) {
         status = 0;
     }
     if (status == 2) {
-        printf_s(str_f("File <%> don`t exists!", getTemp(FILENNAME_CHANNEL)));
+        printf_s(SUS_str_f("File <%> don`t exists!", getTemp(FILENNAME_CHANNEL)));
         status = 0;
     }
     if (status != 0) {

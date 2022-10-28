@@ -15,15 +15,29 @@
 
 #define __self Storage *self
 #define __self__ struct StorageS* self
-// VECTORS
+
+// ~~~~ INTEFACES :
+
+typedef struct tagStringBuilder {
+	char* buffer;
+	int b_size;
+	void (*append) (struct tagStringBuilder* self, string str_nt);
+	void (*trim) (struct tagStringBuilder* self);
+	//void (*replaceAll) (struct tagStringBuilder* self, string pattern, string to); //TODO!!!
+	//int (*length) (...) //TODO ???
+	string (*build) (struct tagStringBuilder* self);
+	string (*buildAndDispose) (struct tagStringBuilder* self);
+	Bool __notnull__;
+} StringBuilder;
 
 typedef struct StringVS {
 	string* ptr;
 	int size;
 	void (*put) (struct StringVS* self, string value);
-	void (*clear)( struct StringVS* self );
+	void (*clear)(struct StringVS* self);
 	Bool __notnull__; // (self == null) ? 0 : 1
 } StringV;
+
 
 typedef struct IntVS {
 	int* ptr;
@@ -49,10 +63,8 @@ typedef struct DoubleVS {
 	Bool __notnull__; // (self == null) ? 0 : 1
 } DoubleV;
 
-// MAIN TYPE
-
-#define isNull(self) (self.__notnull__ == False)
-
+#define isNull(obj) (obj.__notnull__ == False)
+#define isNullP(obj) (obj->__notnull__ == False)
 
 typedef struct StorageS {
 
@@ -77,6 +89,8 @@ typedef struct StorageS {
 
 } Storage;
 
+// STORAGE DEFAULT
+
 Storage Storage_New();
 
 void InitStringV(StringV* v);
@@ -84,25 +98,34 @@ void InitIntV(IntV* v);
 void InitLongV(LongV* v);
 void InitDoubleV(DoubleV* v);
 
+void InitStringBuilder(StringBuilder *builder, string base_nt);
+
 void Storage_Free(__self);
+
+// INTERFACES DEFAULTS
 
 void Storage_PutInt(__self, int value);
 void Storage_PutLong(__self, __int64 value);
 void Storage_PutString(__self, string value);
 void Storage_PutDouble(__self, double value);
 
-void _Default_Vector_PutInt(IntV* v, int value);
-void _Default_Vector_PutLong(LongV* v, __int64 value);
-void _Default_Vector_PutString(StringV* v, string value);
-void _Default_Vector_PutDouble(DoubleV* v, double value);
-
 void Storage_ClearInt(__self);
 void Storage_ClearLong(__self);
 void Storage_ClearString(__self);
 void Storage_ClearDouble(__self);
 
+void _Default_Vector_PutInt(IntV* v, int value);
+void _Default_Vector_PutLong(LongV* v, __int64 value);
+void _Default_Vector_PutString(StringV* v, string value);
+void _Default_Vector_PutDouble(DoubleV* v, double value);
+
 void _Default_Vector_ClearInt(IntV* v);
 void _Default_Vector_ClearLong(LongV* v);
 void _Default_Vector_ClearString(StringV* v);
 void _Default_Vector_ClearDouble(DoubleV* v);
+
+void _Default_SB_Append(StringBuilder* sb, string str);
+void _Default_SB_Trim(StringBuilder* sb);
+string _Default_SB_Build(StringBuilder* sb);
+string _Default_SB_BuildAndDispose(StringBuilder* sb);
 
