@@ -28,7 +28,7 @@ int openFileW(FILE** hFile, string filename);
 void closeFile(FILE* hFile);
 
 void readAllLines_s(FILE* hFile, StringV* bucket);
-void writeAllLines_s(FILE* hFile, StringV lines);
+void writeAllLines_s(FILE* hFile, StringV* lines);
 
 void handleIOError(int status, string msg);
 void _handleIOError(int status);

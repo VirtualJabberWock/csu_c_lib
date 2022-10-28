@@ -44,18 +44,19 @@ void readAllLines_s(FILE* hFile, StringV* sv) {
     handleIOError(status, "Input file: ");
 }
 
-void writeAllLines_s(FILE* hFile, StringV lines)
+void writeAllLines_s(FILE* hFile, StringV* lines)
 {
     int status = STATUS_SUCCESS;
     int tmp;
-    for (int i = 0; i < lines.size; i++) {
-        tmp = fprintf_s(hFile, "%s", lines.ptr[i]);
+    for (int i = 0; i < lines->size; i++) {
+        tmp = fprintf_s(hFile, "%s\n", lines->ptr[i]);
         if (tmp == 0) 
         {
              status = ERROR_CANT_WRITE;
              break;
         }
         if (tmp < 0) {
+            printf("\nstatus = %d\n", tmp);
             status = tmp;
             break;
         }
