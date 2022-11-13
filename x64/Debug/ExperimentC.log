@@ -1,0 +1,15 @@
+﻿  Storage.c
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(25,37): warning C4133: =: несовместимые типы - из "void **" в "const char **"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(49,24): warning C4133: =: несовместимые типы - из "void **" в "const char **"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(86,1): warning C4090: инициализация: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(113,35): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(113,61): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(132,24): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(132,39): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(142,68): warning C4133: функция: несовместимые типы - из "LongV *" в "IntV *"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(143,70): warning C4133: функция: несовместимые типы - из "StringV *" в "IntV *"
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\aquaUtils\Storage.c(144,70): warning C4133: функция: несовместимые типы - из "DoubleV *" в "IntV *"
+  main.c
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\main.c(20,7): warning C4013: Sleep: нет определения; предполагается "extern" с возвратом типа "int"
+  Создание кода...
+  ExperimentC.vcxproj -> C:\Users\aqua\source\repos\ExperimentC\x64\Debug\ExperimentC.exe
