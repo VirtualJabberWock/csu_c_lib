@@ -1,29 +1,32 @@
 #include "StringUtils.h"
-#include "DynamicList.h"
+#include "ArrayUtils.h"
 
-string clearDublicateSpaces(string str)
+string_t SUS_clearDublicateSpaces(string_t str)
 {
 	int i = 0;
-	CharList buf = initList(1, sizeof(char));
+	CharList buf = initArray(1, sizeof(char));
 	int buf_len = 0;
 	char isLastSpace = 0;
 	while(str[i] != '\0'){
 		if (isLastSpace && str[i] == ' ') {}
-		else pushToCharList(&buf, &buf_len, str[i]);
+		else pushToCharArray(&buf, &buf_len, str[i]);
 		isLastSpace = (str[i] == ' ');
 		i++;
 	}
 	return buildString(buf, buf_len);
 }
 
-int getStringLength(string str)
+int SUS_getStringLength(string_t str)
 {
 	int i = 0;
-	while (str[i] != '\0') i++;
+	while (str[i] != '\0') {
+		if (i > 2048) return -1;
+		i++;
+	};
 	return i;
 }
 
-int isStringNumber(string str) {
+int SUS_isStringNumber(string_t str) {
 	int i = 0;
 	if (str[0] == '-') i++;
 	while (str[i] != '\0') {
@@ -33,7 +36,7 @@ int isStringNumber(string str) {
 	return 0;
 }
 
-int parseInteger32(string str, __int32 *out)
+int SUS_parseInteger32(string_t str, __int32 *out)
 {
 	int l = 0;
 	__int64 result = 0;
@@ -44,8 +47,8 @@ int parseInteger32(string str, __int32 *out)
 		sign = -1;
 		l = 1;
 	}
-	int len = getStringLength(str);
-	int isNum = isStringNumber(str);
+	int len = SUS_getStringLength(str);
+	int isNum = SUS_isStringNumber(str);
 	if (isNum != 0) return isNum;
 	if (len > 19) return -2;
 	long long intMax = INT_MAX + ((long long)max(0, -1 * sign));
@@ -62,100 +65,108 @@ int parseInteger32(string str, __int32 *out)
 	return 0;
 }
 
-string str_c(string str1, string str2) {
+string_t SUS_str_c(string_t str1, string_t str2) {
 	int i = 0;
-	CharList buf = initList(1, sizeof(char));
+	CharList buf = initArray(1, sizeof(char));
 	int buf_len = 0;
 	while (str1[i] != '\0') {
-		pushToCharList(&buf, &buf_len, str1[i]); i++;
+		pushToCharArray(&buf, &buf_len, str1[i]); i++;
 	}
 	while (str2[i] != '\0') {
-		pushToCharList(&buf, &buf_len, str2[i]); i++;
+		pushToCharArray(&buf, &buf_len, str2[i]); i++;
 	}
 	return buildString(buf, buf_len);
 }
 
-string str_f(string format, string str2) {
+string_t SUS_str_f(string_t format, string_t str2) {
 	int i = 0;
-	CharList buf = initList(0, sizeof(char));
+	CharList buf = initArray(0, sizeof(char));
 	buf[0] = '\0';
 	int buf_len = 0;
 	while (format[i] != '\0') {
 		if (format[i] == '%') {
 			int j = 0;
 			while (str2[j] != '\0') {
-				pushToCharList(&buf, &buf_len, str2[j]);
+				pushToCharArray(&buf, &buf_len, str2[j]);
 				j++;
 			}
 		}
 		else {
-			pushToCharList(&buf, &buf_len, format[i]);
+			pushToCharArray(&buf, &buf_len, format[i]);
 		}
 		i++;
 	}
 	return buildString(buf, buf_len);
 }
 
-void str_unlock(string const_str, int* out_len, CharList* out_buffer)
+void SUS_str_unlock(string_t const_str, int* out_len, CharList* out_buffer)
 {
 	int i = 0;
 	int buf_len = 0;
 	while (const_str[i] != '\0') {
-		pushToCharList(out_buffer, &buf_len, const_str[i]); i++;
+		pushToCharArray(out_buffer, &buf_len, const_str[i]); i++;
 	}
 	*out_len = buf_len;
 }
 
-string str_bucket_assemble(string* bucket, int bsize, char delim)
+string_t SUS_str_lock(char* buffer, int size)
 {
-	string s = "";
-	CharList megaBuffer = initList(0, sizeof(char));
+	char* buf0 = initArray(size + 1, sizeof(char));
+	for (int i = 0; i < size; i++) buf0[i] = buffer[i];
+	buf0[size] = '\0';
+	return buf0;
+}
+
+string_t SUS_str_bucket_assemble(string_t* bucket, int bsize, char delim)
+{
+	string_t s = "";
+	CharList megaBuffer = initArray(0, sizeof(char));
 	int megaBuffer_len = 0;
 	for (int i = 0; i < bsize; i++) {
 		int j = 0;
 		while (bucket[i][j] != '\0') {
-			pushToCharList(&megaBuffer, &megaBuffer_len, bucket[i][j]); j++;
+			pushToCharArray(&megaBuffer, &megaBuffer_len, bucket[i][j]); j++;
 		}
-		pushToCharList(&megaBuffer, &megaBuffer_len, delim);
+		pushToCharArray(&megaBuffer, &megaBuffer_len, delim);
 	}
 	return buildString(megaBuffer, megaBuffer_len);
 }
 
-string str_copy(string str1) {
+string_t SUS_str_copy(string_t str1) {
 	int i = 0;
-	CharList buf = initList(1, sizeof(char));
+	CharList buf = initArray(1, sizeof(char));
 	int buf_len = 0;
 	while (str1[i] != '\0') {
-		pushToCharList(&buf, &buf_len, str1[i]); i++;
+		pushToCharArray(&buf, &buf_len, str1[i]); i++;
 	}
 	return buildString(buf, buf_len);
 }
 
 
-string trim(string str)
+string_t SUS_trim(string_t str)
 {
-	string str2 = clearDublicateSpaces(str);
-	CharList buf = initList(1, sizeof(char));
+	string_t str2 = SUS_clearDublicateSpaces(str);
+	CharList buf = initArray(1, sizeof(char));
 	int buf_s = 0;
-	int str_len = getStringLength(str2);
+	int str_len = SUS_getStringLength(str2);
 	int start = 0, end = str_len;
 	if (str[0] == ' ') start++;
 	if (str[str_len-1] == ' ') end--;
-	for (int i = start; i < end; i++) pushToCharList(&buf, &buf_s, str2[i]);
+	for (int i = start; i < end; i++) pushToCharArray(&buf, &buf_s, str2[i]);
 	return buildString(buf, buf_s);
 }
 
-string* split(string str, char delimiter, int* count) {
-	string* a = (string*) initBucket(1);
+string_t* SUS_split(string_t str, char delimiter, int* count) {
+	string_t* a = (string_t*) initBucket(1);
 	int bucket_s = 0;
 	int i = 0;
 	int start = 0, end = 0;
-	CharList tmp = initList(1, sizeof(char));
+	CharList tmp = initArray(1, sizeof(char));
 	tmp[0] = '\0';
 	while (str[i] != '\0') {
 		if (str[i] == delimiter) {
-			tmp = initList(end-start+1, sizeof(char));
-			subCharList(str, tmp, start, end-1);
+			tmp = initArray(end-start+1, sizeof(char));
+			subCharArray(str, tmp, start, end-1);
 			pushToBucket(&a, &bucket_s, buildString(tmp, end-start));
 			start = i+1;
 			end = i;
@@ -163,8 +174,8 @@ string* split(string str, char delimiter, int* count) {
 		end++;
 		i++;
 	}
-	tmp = initList(end - start + 1, sizeof(char));
-	subCharList(str, tmp, start, end);
+	tmp = initArray(end - start + 1, sizeof(char));
+	subCharArray(str, tmp, start, end);
 	pushToBucket(&a, &bucket_s, buildString(tmp, end-start));
 	*count = bucket_s; // [out]
 	return a;

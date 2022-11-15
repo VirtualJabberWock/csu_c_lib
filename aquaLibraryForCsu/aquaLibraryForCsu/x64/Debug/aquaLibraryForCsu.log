@@ -1,0 +1,4 @@
+﻿  DebugUtils.c
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\DebugUtils.c(61,22): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\DebugUtils.c(64,16): warning C4090: функция: разные квалификаторы "const"
+  aquaLibraryForCsu.vcxproj -> C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaLibraryForCsu\x64\Debug\aquaLibraryForCsu.exe
