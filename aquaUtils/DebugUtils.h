@@ -12,10 +12,10 @@
 
 static char isDgbHelpLoaded = 0;
 
-void panic(string_t msg);
+int panic(string_t msg);
+int panic_e(string_t class, string_t local, string_t msg);
 void h1dd3n_p4n1c();
-int panic_e(string_t msg);
-void panic_NPE(void* func, string_t obj);
+int panic_NPE(void* func, string_t obj);
 
 void printIntArray(int* array, int len);
 void setLastError(int channel, string_t value);

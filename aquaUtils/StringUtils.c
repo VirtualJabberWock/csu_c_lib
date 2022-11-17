@@ -99,6 +99,17 @@ string_t SUS_str_f(string_t format, string_t str2) {
 	return buildString(buf, buf_len);
 }
 
+string_t SUS_format1024(string_t format, ...)
+{
+	va_list arg;
+	char* buffer = initArray(1024, sizeof(char));
+	/* Write the error message */
+	va_start(arg, format);
+	vsprintf_s(buffer, 1024, format, arg);
+	va_end(arg);
+	return buildString(buffer, 1024);
+}
+
 void SUS_str_unlock(string_t const_str, int* out_len, CharList* out_buffer)
 {
 	int i = 0;

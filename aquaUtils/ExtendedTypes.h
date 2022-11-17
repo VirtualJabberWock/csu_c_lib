@@ -22,6 +22,7 @@ typedef struct tagHashNode {
 
 } HashNode;
 
+#define HASHMAP_CLASSNAME "ExtendedTypes.HashMap"
 typedef struct tagHashMap {
 
 	HashNode* _nodes;

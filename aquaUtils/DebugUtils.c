@@ -17,11 +17,20 @@ static string_t debug_channel2;
 #define cch(Array) ccht(Array, (Array)[0])
 #endif
 
-void panic(string_t msg) {
+int panic(string_t msg) {
 	printf_s(msg);
 	printf_s("\n");
 	system("pause");
 	ExitProcess(1);
+	return 0;
+}
+
+int panic_e(string_t class, string_t local, string_t msg)
+{
+	printf(class);
+	printf(".%s :: ", local);
+	panic(msg);
+	return 0;
 }
 
 void h1dd3n_p4n1c()
@@ -31,38 +40,14 @@ void h1dd3n_p4n1c()
 		"\n and thread SUS(pend)!\nTerminate process...");
 }
 
-int panic_e(string_t msg)
-{
-	panic(msg);
-	return 0;
-}
-
-void panic_NPE(void* func, string_t obj)
+int panic_NPE(void* func, string_t obj)
 {
 	string_t func_name = initArray(64, sizeof(char));
-	int LEVER = 0;
-	if (loadDbgHelp && LEVER) {
-	//	LoadLibraryW(L"dbghelp.dll");
-	//	const size_t array_size = 256;
-	//	const size_t size = sizeof(SYMBOL_INFO) + (array_size - 1) * sizeof(TCHAR);
-	//	SYMBOL_INFO* symbol = calloc(1, size);
-	//	if ((!symbol) || (func == 0))
-	//	{
-	//		panic("NullPointerException: Catastrophic case!");
-	//		return;
-	//	}
-	//	symbol->SizeOfStruct = sizeof(*symbol);  //both values must
-	//	symbol->MaxNameLen = array_size;
-	//	int a = SymFromAddr(GetCurrentProcess(), func, NULL, symbol);
-	//	free(func_name);
-	//	func_name = symbol->Name;
-	}
-	else {
-		sprintf_s(func_name, 64, "%p", func);
-	}
+	sprintf_s(func_name, 64, "%p", func);
 	printf("NullPointerException: at %s, objectName: [%s]", func_name, obj);
 	free(func_name);
 	panic("");
+	return 0;
 }
 
 void printIntArray(int* array, int len) {

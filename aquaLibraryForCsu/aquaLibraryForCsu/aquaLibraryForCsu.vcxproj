@@ -129,6 +129,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\aquaUtils\AquaTypes.c" />
     <ClCompile Include="..\..\aquaUtils\ArrayUtils.c" />
+    <ClCompile Include="..\..\aquaUtils\BasicDataStructs.c" />
     <ClCompile Include="..\..\aquaUtils\DebugUtils.c" />
     <ClCompile Include="..\..\aquaUtils\ExtendedTypes.c" />
     <ClCompile Include="..\..\aquaUtils\FileUtils.c" />
@@ -141,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\aquaUtils\AquaTypes.h" />
     <ClInclude Include="..\..\aquaUtils\ArrayUtils.h" />
+    <ClInclude Include="..\..\aquaUtils\BasicDataStructs.h" />
     <ClInclude Include="..\..\aquaUtils\DebugUtils.h" />
     <ClInclude Include="..\..\aquaUtils\ExtendedTypes.h" />
     <ClInclude Include="..\..\aquaUtils\FileUtils.h" />

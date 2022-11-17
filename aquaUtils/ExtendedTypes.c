@@ -43,7 +43,7 @@ void HASHMAP_Default_put(__HMSelf__, lc_string key, string_t value){
 	int h = hash(key);
 	int index = h & (MAP_BLOCK_SIZE - 1);
 
-	if(DEBUG_MODE) printf("%s -> %s[%d]<%d>\n",value ,key, index, h);
+	if(DEBUG_MODE) printf("%s -> %s[%d]<%d>\n", value, key, index, h);
 
 	if (self->_nodes[index].__notnull__ == 1) {
 		HashNode* node = self->_nodes + index;
@@ -124,12 +124,19 @@ int HASHMAP_Private_hash(string_t s) {
 
 void HASHMAP_Private_checkKey(string_t key) {
 	int len = SUS_getStringLength(key);
-	if (len > MAX_MAP_KEY_SIZE) panic("HashMap :: Key size bigger than max size");
+	if (len > MAX_MAP_KEY_SIZE) 
+		panic_e(
+			HASHMAP_CLASSNAME, "checkKey(key)",
+			"Key size bigger than max size"
+		);
 	for (int i = 0; i < len; i++) {
 		char c = key[i];
 		if ((c >= '0') | (c <= '9')) continue;
 		if (((c < '@') & (c > '[')) | ((c < '`') & (c > '{'))) {
-			panic("HashMap :: key must be contains only letter");
+			panic_e(
+				HASHMAP_CLASSNAME, "checkKey(key)",
+				"key must be contains only letter"
+			);
 		};
 	}
 }
