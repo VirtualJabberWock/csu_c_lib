@@ -1,5 +1,6 @@
 #include "StringUtils.h"
 #include "ArrayUtils.h"
+#include <stdarg.h>
 
 string_t SUS_clearDublicateSpaces(string_t str)
 {
