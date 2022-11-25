@@ -25,6 +25,9 @@
     <Filter Include="aquaUtils\utils">
       <UniqueIdentifier>{6359100e-5229-4ac7-82a5-c9c0e2d63467}</UniqueIdentifier>
     </Filter>
+    <Filter Include="aquaUtils\model\dataStructs">
+      <UniqueIdentifier>{bac1c9bb-ff78-44e6-9a86-f940cde43530}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\main.c">
@@ -59,6 +62,12 @@
     </ClCompile>
     <ClCompile Include="..\..\aquaUtils\BasicDataStructs.c">
       <Filter>aquaUtils\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\aquaUtils\dataStructs\LinkedList.c">
+      <Filter>aquaUtils\model\dataStructs</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\aquaUtils\dataStructs\List.c">
+      <Filter>aquaUtils\model\dataStructs</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +106,12 @@
     </ClInclude>
     <ClInclude Include="..\..\aquaUtils\BasicDataStructs.h">
       <Filter>aquaUtils\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\aquaUtils\dataStructs\LinkedList.h">
+      <Filter>aquaUtils\model\dataStructs</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\aquaUtils\dataStructs\List.h">
+      <Filter>aquaUtils\model\dataStructs</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

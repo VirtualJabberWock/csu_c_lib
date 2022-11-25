@@ -4,11 +4,6 @@
 #include <Windows.h>
 #define string_t const char*
 
-#ifdef WIN32
-#define loadDbgHelp 1
-#else
-#define loadDbgHelp 0
-#endif
 
 static char isDgbHelpLoaded = 0;
 

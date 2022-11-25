@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\aquaLibraryForCsu",
+    "\\aquaUtils"
   ],
+  "SelectedNode": "\\aquaUtils\\StringUtils.c",
   "PreviewInSolutionExplorer": false
 }

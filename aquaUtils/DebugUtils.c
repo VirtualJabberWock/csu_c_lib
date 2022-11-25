@@ -1,6 +1,5 @@
 #include "DebugUtils.h"
 #include <Windows.h>
-#include <DbgHelp.h>
 #include "ArrayUtils.h"
 
 static string_t last_error_channel0;
@@ -12,10 +11,6 @@ static string_t debug_channel0;
 static string_t debug_channel1;
 static string_t debug_channel2;
 
-#ifndef cch
-#define ccht(Array, EltType) (sizeof(Array) / sizeof(EltType))
-#define cch(Array) ccht(Array, (Array)[0])
-#endif
 
 int panic(string_t msg) {
 	printf_s(msg);

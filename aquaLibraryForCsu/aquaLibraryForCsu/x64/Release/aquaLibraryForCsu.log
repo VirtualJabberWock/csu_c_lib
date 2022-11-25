@@ -1,0 +1,25 @@
+﻿  BasicDataStructs.c
+  LinkedList.c
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(21,70): warning C4098: _LinkedList_pushBack: функция типа "void", возвращающая значение
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(43,66): warning C4047: return: "c_node *" отличается по уровням косвенного обращения от "int"
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(59,67): warning C4098: _LinkedList_clear: функция типа "void", возвращающая значение
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(76,49): warning C4090: функция: разные квалификаторы "const"
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(76,65): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(85,5): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(93,52): warning C4090: функция: разные квалификаторы "const"
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(93,68): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(109,5): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(125,67): warning C4098: LinkedListDisplay: функция типа "void", возвращающая значение
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(133,69): warning C4098: ForEachInLinkedList: функция типа "void", возвращающая значение
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\dataStructs\LinkedList.c(148,70): warning C4098: _LinkedList_dispose: функция типа "void", возвращающая значение
+  List.c
+  main.c
+C:\Users\user\source\repos\csu_c_lib\pch.h(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+C:\Users\user\source\repos\csu_c_lib\aquaUtils\FileUtils.h(11,1): warning C4005: ERROR_BUFFER_OVERFLOW: изменение макроопределения
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.17763.0\shared\winerror.h(950): message : см. предыдущее определение "ERROR_BUFFER_OVERFLOW"
+  Создание кода
+  1 of 26 functions ( 3.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  aquaLibraryForCsu.vcxproj -> C:\Users\user\source\repos\csu_c_lib\aquaLibraryForCsu\x64\Release\aquaLibraryForCsu.exe
