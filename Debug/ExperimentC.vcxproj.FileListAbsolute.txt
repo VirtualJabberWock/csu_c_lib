@@ -1,0 +1,3 @@
+C:\Users\user\source\repos\csu_c_lib\Debug\ExperimentC.exe
+C:\Users\aqua\source\repos\ExperimentC\Debug\ExperimentC.pdb
+C:\Users\aqua\source\repos\ExperimentC\CsuLib\Debug\ExperimentC.pdb

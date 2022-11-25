@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="aquaUtils">
+      <UniqueIdentifier>{6140825c-b64a-4b0b-a5b6-a0d513999dcb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="cryptoUtils">
+      <UniqueIdentifier>{3a00be49-25ff-462f-8ad6-8b8c63a62f24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="aquaUtils\model">
+      <UniqueIdentifier>{259af850-03a2-4b82-a5d9-c2131b304d23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="aquaUtils\utils">
+      <UniqueIdentifier>{6359100e-5229-4ac7-82a5-c9c0e2d63467}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\main.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\aquaUtils\DebugUtils.c">
+      <Filter>aquaUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cryptoUtils\NativeCrypto.c">
+      <Filter>cryptoUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cryptoUtils\AquaCrypto.c">
+      <Filter>cryptoUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\aquaUtils\AquaTypes.c">
+      <Filter>aquaUtils\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\aquaUtils\ExtendedTypes.c">
+      <Filter>aquaUtils\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\aquaUtils\ArrayUtils.c">
+      <Filter>aquaUtils\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\aquaUtils\FileUtils.c">
+      <Filter>aquaUtils\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\aquaUtils\StringUtils.c">
+      <Filter>aquaUtils\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\cryptoUtils\CryptoField.c">
+      <Filter>cryptoUtils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\aquaUtils\BasicDataStructs.c">
+      <Filter>aquaUtils\model</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\aquaUtils\DebugUtils.h">
+      <Filter>aquaUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\aquaUtils\pch.h">
+      <Filter>aquaUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cryptoUtils\NativeCrypto.h">
+      <Filter>cryptoUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\pch.h">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cryptoUtils\AquaCrypto.h">
+      <Filter>cryptoUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\aquaUtils\AquaTypes.h">
+      <Filter>aquaUtils\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\aquaUtils\ExtendedTypes.h">
+      <Filter>aquaUtils\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\aquaUtils\ArrayUtils.h">
+      <Filter>aquaUtils\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\aquaUtils\FileUtils.h">
+      <Filter>aquaUtils\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\aquaUtils\StringUtils.h">
+      <Filter>aquaUtils\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\cryptoUtils\CryptoField.h">
+      <Filter>cryptoUtils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\aquaUtils\BasicDataStructs.h">
+      <Filter>aquaUtils\model</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
