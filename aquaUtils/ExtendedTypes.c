@@ -85,9 +85,6 @@ string_t HASHMAP_Default_get(__HMSelf__, lc_string key, errno_t* status){
 	}
 }
 
-/*
-TODO
-*/
 void HASHMAP_Default_dispose(__HMSelf__){
 	if (self->__notnull__ == 0)
 		panic_NPE(HASHMAP_Default_get, "<HashMap> self");

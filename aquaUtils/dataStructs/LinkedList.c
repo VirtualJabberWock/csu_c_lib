@@ -3,7 +3,7 @@
 
 LinkedList* NewLinkedList()
 {
-	LinkedList* l = initArray(1, sizeof(LinkedList));
+	LinkedList* l = (LinkedList*)initArray(1, sizeof(LinkedList));
 	l->head = 0;
 	l->tail = 0;
 	l->size = 0;
@@ -16,9 +16,9 @@ LinkedList* NewLinkedList()
 	return l;
 }
 
-void _LinkedList_pushBack(__SELF_LinkedList__, string_t value)
+errno_t _LinkedList_pushBack(__SELF_LinkedList__, string_t value)
 {
-	if (self == 0) return panic_NPE(_LinkedList_pushBack, "<List> self");
+	if (self == 0) return panic_NPE(_LinkedList_pushBack, "<LinkedList> self");
 
 	c_node* newNode = (c_node*)malloc(sizeof(c_node));
 
@@ -40,7 +40,7 @@ void _LinkedList_pushBack(__SELF_LinkedList__, string_t value)
 
 c_node* _LinkedList_find(__SELF_LinkedList__, string_t value)
 {
-	if (self == 0) return panic_NPE(_LinkedList_find, "<List> self");
+	if (self == 0) return panic_NPE(_LinkedList_find, "<LinkedList> self");
 
 	c_node* current = 0;
 	if (self->head != 0)
@@ -54,9 +54,9 @@ c_node* _LinkedList_find(__SELF_LinkedList__, string_t value)
 	return current;
 }
 
-void _LinkedList_clear(__SELF_LinkedList__) {
+errno_t _LinkedList_clear(__SELF_LinkedList__) {
 
-	if (self == 0) return panic_NPE(_LinkedList_clear, "<List> self");
+	if (self == 0) return panic_NPE(_LinkedList_clear, "<LinkedList> self");
 
 	c_node* current = self->head;
 	c_node* tmp;
@@ -73,7 +73,7 @@ void _LinkedList_clear(__SELF_LinkedList__) {
 
 string_t _LinkedList_get(__SELF_LinkedList__, int id)
 {
-	if (self == 0) return panic_NPE(_LinkedList_get, "<List> self");
+	if (self == 0) return panic_NPE(_LinkedList_get, "<LinkedList> self");
 	if (id == 0) return self->head->value;
 	if (id == self->size-1) return self->tail->value;
 	c_node* current = self->head;
@@ -90,7 +90,7 @@ string_t _LinkedList_get(__SELF_LinkedList__, int id)
 
 string_t _LinkedList_remove(__SELF_LinkedList__, int id)
 {
-	if (self == 0) return panic_NPE(_LinkedList_remove, "<List> self");
+	if (self == 0) return panic_NPE(_LinkedList_remove, "<LinkedList> self");
 	if (id == 0) {
 		string_t tmp = SUS_str_copy(self->head->value);
 		c_node* tmp2 = self->head->next;
@@ -122,22 +122,28 @@ string_t _LinkedList_remove(__SELF_LinkedList__, int id)
 
 void LinkedListDisplay(LinkedList* list, string_t name)
 {
-	if (list == 0) return panic_NPE(LinkedListDisplay, "<List> list");
+	if (list == 0) return panic_NPE(LinkedListDisplay, "<LinkedList> list");
 	printf("[List]<String> %s: \n{\n", name);
-	ForEachInLinkedList(list, __ListElementDisplay);
+	ForEachInLinkedList(list, __LinkedListElementDisplay);
 	printf("\n}\n");
 }
 
-void ForEachInLinkedList(LinkedList* list, LIST_ITER_PROTOTYPE)
+void ForEachInLinkedList(LinkedList* list, LINKEDLIST_ITER_PROTOTYPE)
 {
-	if (list == 0) return panic_NPE(ForEachInLinkedList, "<List> list");
+	if (list == 0) return panic_NPE(ForEachInLinkedList, "<LinkedList> list");
 
 	c_node* current = list->head;
 	while (current != 0)
 	{
-		next(current->value, (current->next != 0));
+		next(current->value, (current->next != 0), list);
 		current = current->next;
 	}
+}
+
+void __LinkedListElementDisplay(string_t element, Bool hasNext, List* ptr)
+{
+	printf("\t%s", element);
+	if (hasNext) printf(", \n");
 }
 
 void _LinkedList_dispose(LinkedList** self) {
@@ -145,7 +151,6 @@ void _LinkedList_dispose(LinkedList** self) {
 		LINKEDLIST_CLASSNAME, "dispose(List** l)",
 		"'l' param should be ptr to ptr, not ptr to structure!"
 	);
-	if (*self == 0) return panic_NPE(_LinkedList_dispose, "<List> self");
 	_LinkedList_clear(*self);
 	free(*self);
 	*self = 0;

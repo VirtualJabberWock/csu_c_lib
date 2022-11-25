@@ -8,20 +8,24 @@ C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\AquaTypes.c(178,77
 C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\AquaTypes.c(179,77): warning C4133: функция: несовместимые типы - из "DoubleV *" в "IntV *"
 C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\AquaTypes.c(202,24): warning C4133: =: несовместимые типы - из "void **" в "const char **"
 C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\AquaTypes.c(220,35): warning C4090: =: разные квалификаторы "const"
+  ArrayUtils.c
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\ArrayUtils.c(22,22): warning C4133: функция: несовместимые типы - из "int **" в "char **"
   BasicDataStructs.c
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\FileUtils.h(11,1): warning C4005: ERROR_BUFFER_OVERFLOW: изменение макроопределения
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\winerror.h(954,1): message : см. предыдущее определение "ERROR_BUFFER_OVERFLOW"
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(12,29): warning C4113: "void (__cdecl *)(List **)" отличается в списках параметров от "void (__cdecl *)(tagList *)"
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(20,64): warning C4098: _List_pushBack: функция типа "void", возвращающая значение
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(42,60): warning C4047: return: "c_node *" отличается по уровням косвенного обращения от "int"
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(58,61): warning C4098: _List_clear: функция типа "void", возвращающая значение
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(75,59): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(84,5): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(92,62): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(108,5): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(124,61): warning C4098: ListDisplay: функция типа "void", возвращающая значение
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(138,63): warning C4098: ForEachInList: функция типа "void", возвращающая значение
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\BasicDataStructs.c(153,64): warning C4098: _List_dispose: функция типа "void", возвращающая значение
+  LinkedList.c
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(21,70): warning C4098: _LinkedList_pushBack: функция типа "void", возвращающая значение
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(43,66): warning C4047: return: "c_node *" отличается по уровням косвенного обращения от "int"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(59,67): warning C4098: _LinkedList_clear: функция типа "void", возвращающая значение
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(76,65): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(85,5): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(93,68): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(109,5): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(125,67): warning C4098: LinkedListDisplay: функция типа "void", возвращающая значение
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(133,69): warning C4098: ForEachInLinkedList: функция типа "void", возвращающая значение
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(148,70): warning C4098: _LinkedList_dispose: функция типа "void", возвращающая значение
+  List.c
+  DebugUtils.c
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\DebugUtils.c(41,21): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\DebugUtils.c(43,16): warning C4090: функция: разные квалификаторы "const"
   ExtendedTypes.c
 C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\FileUtils.h(11,1): warning C4005: ERROR_BUFFER_OVERFLOW: изменение макроопределения
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\winerror.h(954,1): message : см. предыдущее определение "ERROR_BUFFER_OVERFLOW"
@@ -31,10 +35,10 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\winerror.h(95
 C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\FileUtils.c(31,43): warning C4098: readAllLines_s: функция типа "void", возвращающая значение
 C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\FileUtils.c(35,39): warning C4047: =: "int" отличается по уровням косвенного обращения от "char *"
   StringUtils.c
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\StringUtils.c(180,20): warning C4090: функция: разные квалификаторы "const"
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\StringUtils.c(181,59): warning C4090: функция: разные квалификаторы "const"
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\StringUtils.c(189,18): warning C4090: функция: разные квалификаторы "const"
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\StringUtils.c(190,57): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\StringUtils.c(181,20): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\StringUtils.c(182,59): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\StringUtils.c(190,18): warning C4090: функция: разные квалификаторы "const"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\StringUtils.c(191,57): warning C4090: функция: разные квалификаторы "const"
   AquaCrypto.c
 C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\cryptoUtils\AquaCrypto.h(3,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
   CryptoField.c
@@ -43,6 +47,10 @@ C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\pch.h(2,10): warning C4067: 
 C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\FileUtils.h(11,1): warning C4005: ERROR_BUFFER_OVERFLOW: изменение макроопределения
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\shared\winerror.h(954,1): message : см. предыдущее определение "ERROR_BUFFER_OVERFLOW"
   Создание кода...
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\List.c(35): warning C4716: _List_find: должна возвращать значение
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\List.c(53): warning C4716: _List_remove: должна возвращать значение
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\List.c(47): warning C4716: _List_get: должна возвращать значение
 C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\AquaTypes.c(52): warning C4172: возвращение адреса локальной или временной переменной : iv
 C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\AquaTypes.c(45): warning C4172: возвращение адреса локальной или временной переменной : sv
+  LINK : не найден или не выполнена сборка C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaLibraryForCsu\x64\Debug\aquaLibraryForCsu.exe при последней инкрементной компоновке; выполняется полная компоновка
   aquaLibraryForCsu.vcxproj -> C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaLibraryForCsu\x64\Debug\aquaLibraryForCsu.exe
