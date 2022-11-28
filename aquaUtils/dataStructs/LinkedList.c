@@ -103,13 +103,13 @@ string_t _LinkedList_remove(__SELF_LinkedList__, int id)
 	c_node* current = self->head;
 	c_node* previous = current;
 	for (int i = 0; i < id; i++) {
+		previous = current;
+		current = current->next;
 		if (current == 0)
 			return panic_e(
 				LINKEDLIST_CLASSNAME, "remove(self, index)",
 				"element index is outside the bounds of the list"
 			);
-		previous = current;
-		current = current->next;
 	}
 	string_t shadow = SUS_str_copy(current->value);
 	previous->next = current->next;

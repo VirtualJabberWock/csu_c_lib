@@ -1,7 +1,14 @@
-﻿  main.c
-C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\pch.h(2,10): warning C4067: непредвиденные лексемы за директивой препроцессора, требуется newline
+﻿  LinkedList.c
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(43,72): warning C4047: return: "c_node *" отличается по уровням косвенного обращения от "int"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(76,71): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(85,5): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(93,74): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(112,5): warning C4047: return: "const char *" отличается по уровням косвенного обращения от "int"
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(126,73): warning C4098: LinkedListDisplay: функция типа "void", возвращающая значение
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(134,75): warning C4098: ForEachInLinkedList: функция типа "void", возвращающая значение
+C:\Users\aquahaze\Documents\GitHub\csu_c_lib\CsuLib\aquaUtils\dataStructs\LinkedList.c(144,71): warning C4028: формальный параметр 3 отличается от объявления
   Создание кода
-  1 of 29 functions ( 3.4%) were compiled, the rest were copied from previous compilation.
+  0 of 27 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено
