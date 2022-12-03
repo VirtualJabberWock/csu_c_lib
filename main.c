@@ -3,18 +3,12 @@
 #include "aquaUtils/BasicDataStructs.h"
 
 int main() {
-	List* list = NewList();
-	list->push(list, "Joker");
-	list->push(list, "Baker");
-	list->push(list, "Aes");
-	list->push(list, "Okay");
-	list->push(list, "Center");
-	string_t a = list->remove(list, 5);
-	printf("%s", a);
-	list->push(list, "E Corp.");
-	list->push(list, "Mr. Robot");
-	list->push(list, "Sam Sepiol");
-	list->push(list, "Nevermind");
-	list->_dispose(&list);
-	LinkedListDisplay(list, "Test");
+	HashMap* hmap = NewHashMap();
+	hmap->put(hmap, "name", "Aqua");
+	hmap->put(hmap, "surname", "Haze");
+	hmap->put(hmap, "number", "+79525160897");
+	hmap->put(hmap, "Abc", "Collision Check!");
+	hmap->put(hmap, "abc", "Collision Check!?");
+	DataBox* box = DissectHashMap(hmap);
+	box->display(box);
 }

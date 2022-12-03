@@ -202,7 +202,7 @@ void __ListElementDisplay(ValueT element, Bool hasNext, List* ptr)
 	if (hasNext) printf(", \n");
 }
 
-void _Private_SwapLinkedNodes(node* l, node* r)
+void _Private_SwapLinkedNodes(List *list, node* l, node* r)
 {
 	node* ll = l->prev; // before left
 	node* rr = r->next; // next to right
@@ -217,6 +217,11 @@ void _Private_SwapLinkedNodes(node* l, node* r)
 
 	r->next = l; // ... right -> left ...
 	l->next = rr; // left -> right right ...
+
+	if (list->head == l) list->head = r;
+	else if (list->head == r) list->head = l;
+	if (list->tail == l) list->tail = r;
+	else if (list->tail == r) list->tail = l;
 }
 
 void _Private_SwapNodes(List* l, node* left, node* right)
@@ -226,10 +231,8 @@ void _Private_SwapNodes(List* l, node* left, node* right)
 		return panic_NPE(_Private_SwapNodes, "Null node");
 	if (left == right)
 		return printf("%s.SwapNodes :: try to swap same node", LIST_CLASSNAME);
-	if (left->next == right)
-		_Private_SwapLinkedNodes(left, right);
-	else if (right->next == left)  
-		_Private_SwapLinkedNodes(right, left);
+	if (left->next == right || right->next == left)
+		_Private_SwapLinkedNodes(l, left, right);
 	else
 	{
 		node* l_prev = left->prev;  // (left<<left)   left  of the left  node
@@ -265,14 +268,14 @@ void ListBubbleSort(List* l, Bool descending)
 				if (descending)
 				{
 					if (COMPARE_VALUES(current->value, current->next->value))
-						_Private_SwapNodes(l, current, current->next);
+						_Private_SwapLinkedNodes(l, current, current->next);
 					else
 						current = current->next;
 				}
 				else
 				{
 					if (COMPARE_VALUES(current->next->value, current->value))
-						_Private_SwapNodes(l, current, current->next);
+						_Private_SwapLinkedNodes(l, current, current->next);
 					else
 						current = current->next;
 				}

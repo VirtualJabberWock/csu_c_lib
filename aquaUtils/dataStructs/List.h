@@ -58,5 +58,5 @@ void ForEachInList(List* list, LIST_ITER_PROTOTYPE);
 
 void __ListElementDisplay(ValueT element, Bool hasNext, List* ptr);
 
-void _Private_SwapLinkedNodes(node* left, node* right);
+void _Private_SwapLinkedNodes(List* list, node* left, node* right);
 void _Private_SwapNodes(List* l, node* left, node* right);

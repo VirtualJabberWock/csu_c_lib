@@ -2,7 +2,7 @@
 #include "..\aquaUtils\pch.h"
 
 
-#define MAP_BLOCK_SIZE 64
+#define MAP_BLOCK_SIZE 59
 #define MAX_MAP_KEY_SIZE 20
 
 #define __HMSelf__ struct tagHashMap* self
@@ -38,11 +38,15 @@ typedef struct tagDataBox {
 
 	StringV kv;
 	StringV vv;
+	void (*display) (struct tagDataBox* self);
 
 } DataBox;
 
 void __InitHashNode(HashNode* node, int hash, lc_string key, string_t value);
 void InitHashMap(HashMap *map);
+HashMap* NewHashMap();
+HashMap* WrapDataBox(DataBox* box);
+DataBox* DissectHashMap(HashMap* map);
 void InitDataBox(DataBox* dB);
 
 void HASHMAP_Default_put(__HMSelf__, lc_string key, string_t value);
@@ -50,3 +54,5 @@ string_t HASHMAP_Default_get(__HMSelf__, lc_string key, errno_t* status);
 void HASHMAP_Default_dispose(__HMSelf__);
 int HASHMAP_Private_hash(string_t s);
 void HASHMAP_Private_checkKey(string_t key);
+
+void DATABOX_Private_display(DataBox* box);

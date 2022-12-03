@@ -27,8 +27,46 @@ void InitHashMap(HashMap* map)
 	map->size = 0;
 }
 
+HashMap* NewHashMap()
+{
+	HashMap* hmap = malloc(sizeof(HashMap));
+	InitHashMap(hmap);
+	return hmap;
+}
+
+HashMap* WrapDataBox(DataBox* box)
+{
+	if (box->kv.size != box->vv.size) return
+		panic_e(HASHMAP_CLASSNAME, "WrapDataBox",
+			"Invalid dataBox : keys count should equal values count");
+	HashMap* hmap = NewHashMap();
+	for (int i = 0; i < box->kv.size; i++) {
+		hmap->put(hmap, box->kv.ptr[i], box->vv.ptr[i]); 
+	}
+}
+
+DataBox* DissectHashMap(HashMap* map)
+{
+	DataBox* box = (DataBox*) malloc(sizeof(DataBox));
+	if (box == 0) return panic("Memory :: error!");
+	InitDataBox(box);
+	for (int i = 0; i < MAP_BLOCK_SIZE; i++) {
+		HashNode* node = &(map->_nodes[i]);
+		if (node == 0) continue;
+		do {
+			if (node->__notnull__) {
+				box->kv.put(&box->kv, node->key);
+				box->vv.put(&box->vv, node->value);
+			}
+			node = node->next;
+		} while (node != 0);
+	}
+	return box;
+}
+
 void InitDataBox(DataBox* dB)
 {
+	dB->display = DATABOX_Private_display;
 	InitStringV(&(dB->kv));
 	InitStringV(&(dB->vv));
 }
@@ -41,7 +79,7 @@ void HASHMAP_Default_put(__HMSelf__, lc_string key, string_t value){
 	HASHMAP_Private_checkKey(key);
 	
 	int h = hash(key);
-	int index = h & (MAP_BLOCK_SIZE - 1);
+	int index = h % MAP_BLOCK_SIZE;
 
 	if(DEBUG_MODE) printf("%s -> %s[%d]<%d>\n", value, key, index, h);
 
@@ -67,13 +105,16 @@ string_t HASHMAP_Default_get(__HMSelf__, lc_string key, errno_t* status){
 
 	HASHMAP_Private_checkKey(key);
 	int h = hash(key);
-	int index = h & (MAP_BLOCK_SIZE - 1);
+	int index = h % MAP_BLOCK_SIZE;
 	if (DEBUG_MODE) printf("out <- %s[%d]\n", key, index);
 
 	if (self->_nodes[index].__notnull__ == 1) {
 		HashNode* node = self->_nodes + index;
 		while (node->next != 0) {
-			if (node->hash == h) break;
+			if (node->hash == h) {
+				if (node->next == 0) break;
+				if(strcmp(node->key, key) == 0) break;
+			}
 			node = node->next;
 		}
 		if(status != NULL) *status = ERR_NO;
@@ -89,8 +130,7 @@ void HASHMAP_Default_dispose(__HMSelf__){
 	if (self->__notnull__ == 0)
 		panic_NPE(HASHMAP_Default_get, "<HashMap> self");
 	if (self->_nodes == 0) {
-		panic_NPE(HASHMAP_Default_get, "<HashNode*> self->_nodes");
-		return;
+		return panic_NPE(HASHMAP_Default_get, "<HashNode*> self->_nodes");
 	}
 	for (int i = 0; i < MAX_MAP_KEY_SIZE; i++) {
 		if (self->_nodes[i].__notnull__ == 0) continue;
@@ -136,4 +176,19 @@ void HASHMAP_Private_checkKey(string_t key) {
 			);
 		};
 	}
+}
+
+void DATABOX_Private_display(DataBox* box)
+{
+	printf("\n");
+	if (box->kv.size != box->vv.size) {
+		printf("Invalid DataBox!");
+		return;
+	}
+	printf("DataBox {\n");
+	for (int i = 0; i < box->kv.size; i++) {
+		printf("%s : %s", box->kv.ptr[i], box->vv.ptr[i]);
+		printf("\n");
+	}
+	printf("}");
 }
